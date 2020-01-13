@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>layihan</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+
+<script>
+//Ajax POST request
+var formData = new FormData()
+formData.append('f', 'json')
+formData.append('username', 'z_tst_rizal')
+formData.append('password', '4c0c6e0365c72e0e607ea537ad98380b9f177b300a966e395f55918d487e132f')
+formData.append('client', 'requestip')
+formData.append('expiration', 60)
+
+$.ajax({
+  type: "POST",
+  url: 'https://gis.locatorlogic.com/arcgis/tokens/generateToken',
+  data: formData,
+  dataType: "JSON",
+  success: (res)=>{
+     console.log(JSON.stringify(res))
+    //document.write(JSON.stringify(res))
+
+  }
+});
+
+
+</script>
+
+</body>
+</html>
